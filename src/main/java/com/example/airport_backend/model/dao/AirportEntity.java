@@ -1,5 +1,6 @@
-package com.example.airport_backend.model;
+package com.example.airport_backend.model.dao;
 
+import com.example.airport_backend.model.enums.Country;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,16 +16,16 @@ public class AirportEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "airport_id")
-    int airportId;
+    private Integer airportId;
 
     @Column
-    String name;
+    private String name;
 
     @Column
-    String country;
+    private Country country;
 
     @Column
-    String city;
+    private String city;
 
     @OneToMany(mappedBy = "departureAirport")
     private List<FlightEntity> arrivalFlights;

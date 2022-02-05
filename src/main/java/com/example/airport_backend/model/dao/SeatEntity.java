@@ -1,4 +1,4 @@
-package com.example.airport_backend.model;
+package com.example.airport_backend.model.dao;
 
 import lombok.Getter;
 import lombok.Setter;
