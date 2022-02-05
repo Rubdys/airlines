@@ -1,4 +1,4 @@
-package com.example.airport_backend.model;
+package com.example.airport_backend.model.dao;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public class PersonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
-    private int personId;
+    private Integer personId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

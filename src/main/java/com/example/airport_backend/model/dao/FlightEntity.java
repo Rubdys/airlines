@@ -1,4 +1,4 @@
-package com.example.airport_backend.model;
+package com.example.airport_backend.model.dao;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,16 +16,16 @@ public class FlightEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "flight_id")
-    int flightId;
+    private Integer flightId;
 
     @OneToMany(mappedBy = "flights")
-    List<TicketEntity> tickets;
+    private List<TicketEntity> tickets;
 
     @Column
-    LocalDateTime departureTime;
+    private LocalDateTime departureTime;
 
     @Column
-    LocalDateTime arrivalTime;
+    private LocalDateTime arrivalTime;
 
     @ManyToOne
     @JoinColumn(name = "departure_airport_id")
