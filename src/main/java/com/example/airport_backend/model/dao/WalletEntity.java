@@ -14,8 +14,7 @@ public class WalletEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "wallet_id")
-    private Integer walletId;
+    private Integer id;
 
     @Column(name = "amount")
     private int amount;
