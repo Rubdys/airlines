@@ -13,8 +13,7 @@ public class LuggageEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "luggage_id")
-    private Integer luggageId;
+    private Integer id;
 
     @OneToOne
     private TicketEntity ticketEntity;

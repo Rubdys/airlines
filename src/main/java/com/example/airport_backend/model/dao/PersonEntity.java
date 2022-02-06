@@ -13,8 +13,7 @@ public class PersonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id")
-    private Integer personId;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

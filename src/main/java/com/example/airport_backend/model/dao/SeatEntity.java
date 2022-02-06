@@ -13,8 +13,7 @@ public class SeatEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "seat_id")
-    private Integer seatId;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "airplane_id")
