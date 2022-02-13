@@ -5,6 +5,7 @@ import com.example.airport_backend.model.dto.response.UserResponse;
 import com.example.airport_backend.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,4 +28,8 @@ public class UserController {
         return userService.logIn(userRequest);
     }
 
+    @GetMapping(path = "/users/all")
+    public List<UserResponse> getAll(){
+        return userService.getAll();
+    }
 }

@@ -1,25 +1,21 @@
 package com.example.airport_backend.model.dto.response;
 
-
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 @Getter
 @Builder
-public class UserResponse {
+public class SeatResponse {
 
     private Integer id;
 
-    private String firstName;
+    private boolean available;
 
-    private String lastName;
+    private String seatNumber;
 
-    private String idCard;
-
-    private String mail;
+    private AirplaneResponse airplane;
 
     private List<TicketResponse> tickets;
 }

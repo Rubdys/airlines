@@ -1,5 +1,6 @@
 package com.example.airport_backend.model.dao;
 
+import com.example.airport_backend.model.enums.AirplaneModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,14 +18,12 @@ public class AirplaneEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "number_of_seats")
-    private int numberOfSeats;
+    @Column(name = "airplane_model")
+    @Enumerated(EnumType.STRING)
+    private AirplaneModel airplaneModel;
 
     @OneToMany(mappedBy = "airplane")
     private List<FlightEntity> flights;
-
-    @OneToMany(mappedBy = "airplane")
-    private List<TicketEntity> tickets;
 
     @OneToMany(mappedBy = "airplane")
     private List<SeatEntity> seats;

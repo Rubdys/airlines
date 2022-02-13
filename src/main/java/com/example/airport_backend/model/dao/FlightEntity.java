@@ -17,7 +17,7 @@ public class FlightEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "flights")
+    @OneToMany(mappedBy = "flight")
     private List<TicketEntity> tickets;
 
     @Column

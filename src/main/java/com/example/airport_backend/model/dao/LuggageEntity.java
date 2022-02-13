@@ -1,5 +1,6 @@
 package com.example.airport_backend.model.dao;
 
+import com.example.airport_backend.model.enums.LuggageType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +17,8 @@ public class LuggageEntity {
     private Integer id;
 
     @OneToOne
-    private TicketEntity ticketEntity;
+    private TicketEntity ticket;
+
+    @Column(name = "luggage_type")
+    private LuggageType luggageType;
 }

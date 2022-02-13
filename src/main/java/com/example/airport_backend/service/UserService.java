@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,13 +28,10 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
     public UserResponse registerUser(UserRequest userRequest) {
         UserEntity toAdd = converter.convert(userRequest, UserEntity.class);
         WalletEntity wallet = new WalletEntity();
+        wallet.setUser(toAdd);
         toAdd.setWallet(wallet);
         return converter.convert(userRepository.save(toAdd), UserResponse.class);
     }
@@ -45,5 +43,9 @@ public class UserService {
             return converter.convert(user.get(), UserResponse.class);
         }
         throw new ApplicationException(ApplicationError.WRONG_PASSWORD);
+    }
+
+    public List<UserResponse> getAll() {
+        return converter.convert(converter.convert(userRepository.findAll(), UserEntity.class), UserResponse.class);
     }
 }

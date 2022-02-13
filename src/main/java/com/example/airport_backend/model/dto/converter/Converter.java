@@ -14,7 +14,7 @@ public class Converter {
 
     public <F, T> T convert(F fromObject, Class<T> to){
         for(Convert conv: converters){
-            if(conv.canHandle(fromObject.getClass(), to.getClass())){
+            if(conv.canHandle(fromObject.getClass(), to)){
                 return to.cast(conv.convert(fromObject));
             }
         }
