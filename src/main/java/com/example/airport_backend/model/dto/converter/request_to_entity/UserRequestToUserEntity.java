@@ -5,9 +5,11 @@ import com.example.airport_backend.model.dao.UserEntity;
 import com.example.airport_backend.model.dto.converter.Convert;
 import com.example.airport_backend.model.dto.request.UserRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class UserRequestToUserEntity implements Convert<UserRequest, UserEntity> {
 
     private PasswordEncoder passwordEncoder;
@@ -21,7 +23,7 @@ public class UserRequestToUserEntity implements Convert<UserRequest, UserEntity>
         UserEntity toReturn = new UserEntity();
         toReturn.setFirstName(from.getFirstName());
         toReturn.setLastName(from.getLastName());
-        toReturn.setMail(from.getLastName());
+        toReturn.setMail(from.getMail());
         toReturn.setPassword(passwordEncoder.encode(from.getPassword()));
         toReturn.setIdCard(from.getIdCard());
         return toReturn;

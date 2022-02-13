@@ -20,18 +20,18 @@ public class TicketEntity {
     private UserEntity user;
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
-    private PersonEntity person;
+    @JoinColumn(name = "ticket_owner_id")
+    private TicketOwnerEntity ticketOwner;
 
     @OneToOne
     private LuggageEntity luggage;
 
     @ManyToOne
     @JoinColumn(name = "flight_id")
-    private FlightEntity flights;
+    private FlightEntity flight;
 
     @ManyToOne
-    @JoinColumn(name = "airplane_id")
-    private AirplaneEntity airplane;
+    @JoinColumn(name = "seat_id")
+    private SeatEntity seat;
 
 }
