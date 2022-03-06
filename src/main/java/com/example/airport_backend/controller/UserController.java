@@ -1,5 +1,6 @@
 package com.example.airport_backend.controller;
 
+import com.example.airport_backend.model.dto.request.LoginRequest;
 import com.example.airport_backend.model.dto.request.UserRequest;
 import com.example.airport_backend.model.dto.response.UserResponse;
 import com.example.airport_backend.service.UserService;
@@ -23,12 +24,12 @@ public class UserController {
         return userService.registerUser(userRequest);
     }
 
-    @GetMapping(path = "/users/login")
-    public UserResponse logIn(@RequestBody UserRequest userRequest){
-        return userService.logIn(userRequest);
+    @PostMapping(path = "/users/login")
+    public UserResponse logIn(@RequestBody LoginRequest loginRequest){
+        return userService.logIn(loginRequest);
     }
 
-    @GetMapping(path = "/users/all")
+    @GetMapping(path = "/users")
     public List<UserResponse> getAll(){
         return userService.getAll();
     }

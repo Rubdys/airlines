@@ -27,7 +27,7 @@ public class Converter {
         }
 
         for(Convert conv: converters){
-            if(conv.canHandle(fromList.get(0).getClass(), to.getClass())){
+            if(conv.canHandle(fromList.get(0).getClass(), to)){
                 return conv.convert(fromList);
             }
         }

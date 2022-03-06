@@ -19,7 +19,7 @@ public class TicketEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ticket_owner_id")
     private TicketOwnerEntity ticketOwner;
 

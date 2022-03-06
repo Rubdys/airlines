@@ -16,7 +16,7 @@ public class AirportController {
         this.airportService = airportService;
     }
 
-    @PostMapping(path = "/airport/add")
+    @PostMapping(path = "/airport")
     public AirportResponse addNew(@RequestBody AirportRequest airportRequest){
         return airportService.addNew(airportRequest);
     }

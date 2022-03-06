@@ -40,4 +40,7 @@ public class UserEntity {
     @OneToMany(mappedBy = "user")
     private List<PersonEntity> people;
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    private List<RoleEntity> roles;
+
 }

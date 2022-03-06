@@ -19,12 +19,12 @@ public class AirplaneController {
         this.airplaneService = airplaneService;
     }
 
-    @PostMapping(path = "/airplane/add")
+    @PostMapping(path = "/airplane")
     public AirplaneResponse addNew(@RequestBody AirplaneRequest airplaneRequest){
         return airplaneService.addNew(airplaneRequest);
     }
 
-    @GetMapping(path = "/airplane/all")
+    @GetMapping(path = "/airplane")
     public List<AirplaneResponse> getAll(){
         return airplaneService.getAll();
     }
