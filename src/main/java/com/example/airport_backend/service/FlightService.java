@@ -92,4 +92,12 @@ public class FlightService {
 
         return toReturn;
     }
+
+    public List<FlightResponse> findSpecific(String arrivalCountry, String departureCountry, String startTime, String backTime) {
+        if(startTime.equals(backTime)){
+            backTime = null;
+        }
+        List<FlightEntity> toChange = flightRepository.getByFilter(arrivalCountry, departureCountry, startTime, backTime);
+        return converter.convert(toChange, FlightResponse.class);
+    }
 }
